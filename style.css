@@ -1,0 +1,505 @@
+/* ==================================================
+   PENGATURAN DASAR
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    /* Background luar angkasa */
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #4b0082 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            #001f5c 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            #240046 0%,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020111,
+            #05051f,
+            #000814
+        );
+
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   BINTANG
+================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            #ffffff 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            #7df9ff 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px,
+        120px 120px,
+        180px 180px;
+
+    background-position:
+        0 0,
+        40px 60px,
+        90px 30px;
+
+    opacity: 0.5;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   PROFIL
+================================================== */
+
+.profile {
+
+    background: rgba(5, 10, 35, 0.90);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #00e5ff;
+
+    box-shadow:
+
+        0 0 15px #00e5ff,
+
+        0 0 40px rgba(
+            123,
+            44,
+            255,
+            0.3
+        );
+}
+
+
+/* FOTO */
+
+.profile img {
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #7df9ff;
+
+    box-shadow:
+
+        0 0 15px #00e5ff,
+
+        0 0 35px #7b2cff;
+}
+
+
+/* NAMA */
+
+.profile h1 {
+
+    margin-bottom: 5px;
+
+    font-size: 32px;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px #00e5ff,
+
+        0 0 20px #7b2cff;
+}
+
+
+/* JURUSAN */
+
+.profile h3 {
+
+    margin-top: 0;
+
+    color: #7df9ff;
+}
+
+
+/* DESKRIPSI */
+
+.profile p {
+
+    line-height: 1.6;
+
+    color: #d8eaff;
+}
+
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+/* KOTAK MENU */
+
+.menu button {
+
+    border: 1px solid #7df9ff;
+
+    background: rgba(
+        5,
+        10,
+        35,
+        0.9
+    );
+
+    color: white;
+
+    padding: 25px 10px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    font-size: 30px;
+
+    box-shadow:
+
+        0 0 10px
+        rgba(0, 229, 255, 0.3);
+
+    transition: 0.3s;
+}
+
+
+/* NAMA MENU */
+
+.menu button span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* EFEK KETIKA DITEKAN / DISENTUH */
+
+.menu button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a3d,
+            #240046
+        );
+
+    border-color: white;
+
+    box-shadow:
+
+        0 0 15px #00e5ff,
+
+        0 0 30px #7b2cff;
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.content {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(5, 10, 35, 0.95);
+
+    border: 1px solid #7df9ff;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(0, 229, 255, 0.4),
+
+        0 0 30px
+        rgba(123, 44, 255, 0.3);
+
+    animation:
+        muncul 0.5s ease;
+}
+
+
+/* CONTENT AKTIF */
+
+.content.active {
+
+    display: block;
+}
+
+
+/* JUDUL CONTENT */
+
+.content h2 {
+
+    color: #7df9ff;
+
+    text-shadow:
+
+        0 0 10px #00e5ff,
+
+        0 0 20px #7b2cff;
+}
+
+
+/* TEXT */
+
+.content p {
+
+    line-height: 1.7;
+
+    color: #e0f7ff;
+}
+
+
+/* ==================================================
+   MEDIA SOSIAL
+================================================== */
+
+.social a {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #7df9ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.social a:hover {
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px #00e5ff,
+
+        0 0 20px #7b2cff;
+}
+
+
+/* ==================================================
+   MUSIK
+================================================== */
+
+.song {
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a3d,
+            #240046
+        );
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border: 1px solid #7df9ff;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 229, 255, 0.3);
+}
+
+
+/* ==================================================
+   MOTIVASI
+================================================== */
+
+.quote {
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: #7df9ff !important;
+
+    text-shadow:
+        0 0 8px #00e5ff;
+}
+
+
+/* ==================================================
+   ANIMASI
+================================================== */
+
+@keyframes muncul {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-15px)
+            scale(0.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==================================================
+   TAMPILAN HP
+================================================== */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding:
+            20px 10px;
+    }
+
+
+    .profile {
+
+        padding: 20px;
+    }
+
+
+    .profile img {
+
+        width: 150px;
+
+        height: 150px;
+    }
+
+
+    .menu {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .menu button {
+
+        padding: 20px 5px;
+
+        font-size: 25px;
+    }
+
+
+    .menu button span {
+
+        font-size: 14px;
+    }
+
+}
