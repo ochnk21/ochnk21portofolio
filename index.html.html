@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Fauzan</title>
+
+    <!-- Menghubungkan HTML dengan CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ==================== PROFIL ==================== -->
+        <div class="profile">
+
+            <img src="01.jpeg.jpeg" alt="Foto Fauzan">
+
+            <h1>FAUZAN</h1>
+
+            <h3>🚀 Siswa TJKT</h3>
+
+            <p>
+                Selamat datang di website pribadi saya.
+                Jelajahi profil saya melalui menu di bawah.
+            </p>
+
+        </div>
+
+
+        <!-- ==================== MENU ==================== -->
+        <div class="menu">
+
+            <button onclick="bukaMenu('profil')">
+                👤
+                <span>Profil</span>
+            </button>
+
+            <button onclick="bukaMenu('sosmed')">
+                🌐
+                <span>Media Sosial</span>
+            </button>
+
+            <button onclick="bukaMenu('musik')">
+                🎵
+                <span>Musik</span>
+            </button>
+
+            <button onclick="bukaMenu('motivasi')">
+                🚀
+                <span>Motivasi</span>
+            </button>
+
+        </div>
+
+
+        <!-- ==================== ISI PROFIL ==================== -->
+        <div id="profil" class="content">
+
+            <h2>👤 Tentang Saya</h2>
+
+            <p>
+                Halo! Perkenalkan nama saya Fauzan.
+                Saya adalah seorang pelajar yang memiliki
+                ketertarikan terhadap teknologi, kreativitas,
+                olahraga, dan berbagai kegiatan yang dapat
+                mengembangkan kemampuan saya.
+            </p>
+
+            <div class="data">
+
+                <p>📚 <b>Jurusan:</b> TJKT</p>
+
+                <p>🏫 <b>Sekolah:</b> SMKN 3 SOPPENG</p>
+
+                <p>⚽ <b>Hobi:</b> Bermain bola</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== MEDIA SOSIAL ==================== -->
+        <div id="sosmed" class="content">
+
+            <h2>🌐 Media Sosial</h2>
+
+            <div class="social">
+
+                <p>📷 Instagram</p>
+
+                <a href="https://instagram.com/ochnk404" target="_blank">
+                    @ochnk404
+                </a>
+
+                <p>🎵 TikTok</p>
+
+                <a href="https://tiktok.com/@1508." target="_blank">
+                    @1508.
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== MUSIK ==================== -->
+        <div id="musik" class="content">
+
+            <h2>🎵 Musik Favorit</h2>
+
+            <div class="song">
+
+                <p>🎧 1. Love Me Not</p>
+                <p>🎧 2. The Winner Takes It All</p>
+
+        <p>🎧 3. The One That Got Away</p>
+
+        <p>🎧 4. The Man Who Can't Be Moved</p>
+
+        <p>🎧 5. Blank Space</p>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== MOTIVASI ==================== -->
+        <div id="motivasi" class="content">
+
+            <h2>🚀 Motivasi</h2>
+
+            <p class="quote">
+                "Jangan takut untuk bermimpi besar.
+                Mulailah dari hal kecil, terus belajar,
+                dan jangan pernah menyerah."
+            </p>
+
+            <p>
+                ⭐ Terus belajar.
+                <br>
+                ⭐ Terus berkembang.
+                <br>
+                ⭐ Jangan takut mencoba.
+                <br>
+                ⭐ Jadilah versi terbaik dari dirimu.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+
+        function bukaMenu(id) {
+
+            // Mengambil semua bagian content
+            const semuaContent =
+                document.querySelectorAll(".content");
+
+            // Menutup semua bagian
+            semuaContent.forEach(function(content) {
+                content.classList.remove("active");
+            });
+
+            // Membuka bagian yang dipilih
+            document.getElementById(id).classList.add("active");
+        }
+
+    </script>
+
+</body>
+</html>
