@@ -4,126 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAUZAN | GUESTBOOK LOGS</title>
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        .guestbook-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            text-align: left;
-        }
-
-        .input-group label {
-            font-size: 0.8rem;
-            color: #00f3ff;
-            letter-spacing: 1px;
-        }
-
-        .input-group input, 
-        .input-group textarea {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid #00f3ff;
-            border-radius: 5px;
-            padding: 10px;
-            color: #fff;
-            font-family: inherit;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .input-group input:focus, 
-        .input-group textarea:focus {
-            border-color: #ff0055;
-            box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
-        }
-
-        .btn-submit {
-            background: transparent;
-            border: 1px solid #00f3ff;
-            color: #00f3ff;
-            padding: 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            letter-spacing: 1px;
-        }
-
-        .btn-submit:hover {
-            background: #00f3ff;
-            color: #000;
-            box-shadow: 0 0 15px #00f3ff;
-        }
-
-        .logs-title {
-            text-align: left;
-            font-size: 0.9rem;
-            color: #ff0055;
-            border-bottom: 1px dashed #ff0055;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-
-        .guestbook-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-height: 350px;
-            overflow-y: auto;
-            text-align: left;
-        }
-
-        .log-card {
-            background: rgba(10, 10, 20, 0.8);
-            border-left: 3px solid #00f3ff;
-            padding: 10px 15px;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .log-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-        }
-
-        .log-user {
-            color: #ff0055;
-            font-weight: bold;
-        }
-
-        .log-time {
-            color: #888;
-            font-size: 0.75rem;
-        }
-
-        .log-msg {
-            color: #ddd;
-            font-size: 0.9rem;
-            word-break: break-word;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #00f3ff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .back-btn:hover {
-            color: #ff0055;
-            text-shadow: 0 0 8px #ff0055;
-        }
-    </style>
+    <!-- Hubungkan ke file CSS utama yang berada di folder luar -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="background"></div>
@@ -135,6 +17,7 @@
             <span class="robot">🤖</span>
         </div>
 
+        <!-- TOMBOL KEMBALI KE MENU UTAMA -->
         <a href="../index.html" class="back-btn">← BACK TO SYSTEM MENU</a>
 
         <div class="profile">
@@ -155,7 +38,7 @@
                 <label for="message">> PESAN </label>
                 <textarea id="message" rows="3" placeholder="Tulis pesan/kesan untuk Fauzan..." required></textarea>
             </div>
-            <button type="submit" class="btn-submit">KIRIM PESAN ()</button>
+            <button type="submit" class="btn-submit">KIRIM PESAN (//)</button>
         </form>
 
         <!-- DAFTAR PESAN -->
@@ -169,7 +52,8 @@
     </div>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEkK4qbHIEmjIYb9xNH-NsMvoiOLPwlYeHC6hp9VeBgYgIiTZ5qRdc-h5mIaFT9UXczA/exec";
+        // URL Web App dari Google Apps Script Anda
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVQ4hfvEwaoMHs4PtPXbqKseToUdTxDQsQ0nP-rlXmxlmGRkhXvFNkA0UXkAFAIaHQOA/exec";
 
         const form = document.getElementById('guestbook-form');
         const list = document.getElementById('guestbook-list');
@@ -181,15 +65,17 @@
 
             const name = document.getElementById('username').value;
             const message = document.getElementById('message').value;
+            
+            // Format waktu regional Indonesia
             const time = new Date().toLocaleDateString('id-ID') + ' | ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
             const newEntry = { name, message, time };
 
-            // Tampilkan di tampilan langsung
+            // Langsung tampilkan di layar agar terasa instan bagi user
             addMessageToDOM(newEntry);
             form.reset();
 
-            // Format data dikirim sebagai Form URL Encoded untuk menghindari isu CORS
+            // Mengirim data menggunakan format URL Encoded untuk mengindari masalah CORS
             const formData = new URLSearchParams();
             formData.append('name', name);
             formData.append('message', message);
@@ -211,6 +97,7 @@
             });
         });
 
+        // Fungsi memasukkan kotak pesan ke dalam struktur HTML
         function addMessageToDOM(entry) {
             const card = document.createElement('div');
             card.className = 'log-card';
@@ -224,25 +111,28 @@
             list.prepend(card);
         }
 
+        // Fungsi mengambil data yang tersimpan dari Google Sheets saat halaman dibuka
         function loadMessages() {
-            list.innerHTML = '<div style="color: #00f3ff; font-size: 0.8rem;">LOADING_TRANSMISSIONS...</div>';
+            list.innerHTML = '<div style="color: #00eaff; font-size: 11px; letter-spacing: 1px;">LOADING_TRANSMISSIONS...</div>';
             
             fetch(SCRIPT_URL)
                 .then(response => response.json())
                 .then(data => {
                     list.innerHTML = '';
                     if (!data || data.length === 0) {
-                        list.innerHTML = '<div style="color: #888; font-size: 0.8rem;">NO_TRANSMISSIONS_FOUND</div>';
+                        list.innerHTML = '<div style="color: #547985; font-size: 11px; letter-spacing: 1px;">NO_TRANSMISSIONS_FOUND</div>';
                     } else {
+                        // Membalik urutan data (reverse) agar pesan terbaru selalu muncul di paling atas
                         data.reverse().forEach(msg => addMessageToDOM(msg));
                     }
                 })
                 .catch(error => {
-                    list.innerHTML = '<div style="color: #ff0055; font-size: 0.8rem;">FAILED_TO_LOAD_DATA</div>';
+                    list.innerHTML = '<div style="color: #ff0055; font-size: 11px; letter-spacing: 1px;">FAILED_TO_LOAD_DATA</div>';
                     console.error('Error:', error);
                 });
         }
 
+        // PERBAIKAN DI SINI: Karakter petik tunggal telah diubah menjadi kode entitas desimal '&#39;'
         function escapeHTML(str) {
             return str.replace(/[&<>'"]/g, 
                 tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
