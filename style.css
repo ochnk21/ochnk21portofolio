@@ -1,1066 +1,492 @@
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+/* UNIVERSAL SELECTOR (Tanda Bintang) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 
 /* ===================================
 BODY
 =================================== */
-
 body {
-
-min-height: 100vh;
-
-background: #02070d;
-
-color: white;
-
-font-family: Arial, Helvetica, sans-serif;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-padding: 20px;
-
-overflow-x: hidden;
-
-
+    min-height: 100vh;
+    background: #02070d;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
 /* ===================================
 BACKGROUND ROBOT
 =================================== */
-
 .background {
-
-position: fixed;
-
-inset: 0;
-
-background-image:
-
-    linear-gradient(
-        rgba(0, 229, 255, 0.06) 1px,
-        transparent 1px
-    ),
-
-    linear-gradient(
-        90deg,
-        rgba(0, 229, 255, 0.06) 1px,
-        transparent 1px
-    );
-
-background-size: 35px 35px;
-
-z-index: -2;
-
-
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            rgba(0, 229, 255, 0.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.06) 1px,
+            transparent 1px
+        );
+    background-size: 35px 35px;
+    z-index: -2;
 }
 
 body::before {
-
-content: "";
-
-position: fixed;
-
-width: 500px;
-
-height: 500px;
-
-background: #00eaff;
-
-opacity: 0.08;
-
-border-radius: 50%;
-
-filter: blur(120px);
-
-top: -200px;
-
-left: 50%;
-
-transform: translateX(-50%);
-
-z-index: -1;
-
-
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00eaff;
+    opacity: 0.08;
+    border-radius: 50%;
+    filter: blur(120px);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
 /* ===================================
 CONTAINER
 =================================== */
-
 .container {
-
-width: 100%;
-
-max-width: 500px;
-
-padding: 25px;
-
-background:
-
-    linear-gradient(
-        145deg,
-        #071720,
-        #02080d
-    );
-
-border: 1px solid #00eaff;
-
-border-radius: 18px;
-
-box-shadow:
-
-    0 0 15px
-    rgba(0, 234, 255, 0.4),
-
-    0 0 50px
-    rgba(0, 234, 255, 0.1),
-
-    inset 0 0 30px
-    rgba(0, 234, 255, 0.04);
-
-position: relative;
-
-overflow: hidden;
-
-
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            #071720,
+            #02080d
+        );
+    border: 1px solid #00eaff;
+    border-radius: 18px;
+    box-shadow:
+        0 0 15px rgba(0, 234, 255, 0.4),
+        0 0 50px rgba(0, 234, 255, 0.1),
+        inset 0 0 30px rgba(0, 234, 255, 0.04);
+    position: relative;
+    overflow: hidden;
 }
 
-/* CORNER */
-
+/* CORNER DECORATION */
 .container::before {
-
-content: "";
-
-position: absolute;
-
-top: 0;
-
-left: 0;
-
-width: 40px;
-
-height: 40px;
-
-border-top: 3px solid #00ff88;
-
-border-left: 3px solid #00ff88;
-
-
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 3px solid #00ff88;
+    border-left: 3px solid #00ff88;
 }
 
 .container::after {
-
-content: "";
-
-position: absolute;
-
-bottom: 0;
-
-right: 0;
-
-width: 40px;
-
-height: 40px;
-
-border-bottom: 3px solid #00ff88;
-
-border-right: 3px solid #00ff88;
-
-
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom: 3px solid #00ff88;
+    border-right: 3px solid #00ff88;
 }
 
 /* ===================================
 HEADER
 =================================== */
-
 .header {
-
-display: flex;
-
-justify-content: space-between;
-
-align-items: center;
-
-margin-bottom: 20px;
-
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .online {
-
-color: #00ff88;
-
-font-size: 10px;
-
-font-weight: bold;
-
-letter-spacing: 2px;
-
-text-shadow:
-    0 0 8px #00ff88;
-
-
+    color: #00ff88;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #00ff88;
 }
 
 .robot {
-
-font-size: 30px;
-
-filter:
-    drop-shadow(
-        0 0 10px #00eaff
-    );
-
-
+    font-size: 30px;
+    filter: drop-shadow(0 0 10px #00eaff);
 }
 
 /* ===================================
 PROFILE
 =================================== */
-
 .profile {
-
-text-align: center;
-
-margin-bottom: 25px;
-
-
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-/* FOTO */
-
+/* FOTO PROFIL */
 .photo-box {
-
-width: 150px;
-
-height: 150px;
-
-margin: auto;
-
-margin-bottom: 15px;
-
-padding: 5px;
-
-position: relative;
-
-background: #020a10;
-
-border: 2px solid #00eaff;
-
-box-shadow:
-
-    0 0 10px #00eaff,
-
-    0 0 30px
-    rgba(0, 234, 255, 0.3);
-
-overflow: hidden;
-
-
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 5px;
+    position: relative;
+    background: #020a10;
+    border: 2px solid #00eaff;
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 30px rgba(0, 234, 255, 0.3);
+    overflow: hidden;
 }
-
-/* FOTO */
 
 .photo-box img {
-
-width: 100%;
-
-height: 100%;
-
-display: block;
-
-object-fit: cover;
-
-
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
-/* SCANNING */
-
+/* SCANNING EFFECT */
 .scan {
-
-position: absolute;
-
-width: 100%;
-
-height: 3px;
-
-left: 0;
-
-top: 0;
-
-background: #00ffff;
-
-box-shadow:
-    0 0 10px #00ffff;
-
-opacity: 0.8;
-
-animation:
-    scan 3s linear infinite;
-
-
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 0;
+    background: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    opacity: 0.8;
+    animation: scan 3s linear infinite;
 }
 
-/* USER ID */
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
 
+/* TEXT PROFILE */
 .userid {
-
-color: #00ff88;
-
-font-size: 9px;
-
-letter-spacing: 3px;
-
-margin-bottom: 8px;
-
-
+    color: #00ff88;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
 }
-
-/* NAMA */
 
 .profile h1 {
-
-font-size: 36px;
-
-letter-spacing: 8px;
-
-margin-bottom: 8px;
-
-color: white;
-
-text-shadow:
-
-    0 0 5px #00eaff,
-
-    0 0 15px #00eaff,
-
-    0 0 30px #00eaff;
-
-
+    font-size: 36px;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+    color: white;
+    text-shadow:
+        0 0 5px #00eaff,
+        0 0 15px #00eaff,
+        0 0 30px #00eaff;
 }
 
-/* TJKT */
-
 .profile h3 {
-
-color: #00eaff;
-
-font-size: 13px;
-
-letter-spacing: 3px;
-
-margin-bottom: 15px;
-
-
+    color: #00eaff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
 }
 
 .description {
-
-color: #8caeb7;
-
-font-size: 13px;
-
-line-height: 1.7;
-
-
+    color: #8caeb7;
+    font-size: 13px;
+    line-height: 1.7;
 }
 
 /* ===================================
-MENU
+MENU UTAMA
 =================================== */
-
 .menu {
-
-display: flex;
-
-flex-direction: column;
-
-gap: 12px;
-
-
-}
-
-.menu-button {
-
-display: flex;
-
-align-items: center;
-
-gap: 13px;
-
-min-height: 75px;
-
-padding: 12px;
-
-color: white;
-
-text-decoration: none;
-
-background:
-
-    linear-gradient(
-        90deg,
-        rgba(0, 234, 255, 0.12),
-        rgba(0, 234, 255, 0.02)
-    );
-
-border: 1px solid
-    rgba(0, 234, 255, 0.35);
-
-position: relative;
-
-transition: 0.3s;
-
-overflow: hidden;
-
-
-}
-
-/* GARIS KIRI */
-
-.menu-button::before {
-
-content: "";
-
-position: absolute;
-
-left: 0;
-
-top: 0;
-
-width: 3px;
-
-height: 100%;
-
-background: #00eaff;
-
-box-shadow:
-    0 0 10px #00eaff;
-
-
-}
-
-/* HOVER */
-
-.menu-button:hover {
-
-transform:
-    translateX(7px);
-
-background:
-
-    linear-gradient(
-        90deg,
-        rgba(0, 234, 255, 0.25),
-        rgba(0, 234, 255, 0.05)
-    );
-
-border-color: #00eaff;
-
-box-shadow:
-
-    0 0 20px
-    rgba(0, 234, 255, 0.25);
-
-
-}
-
-/* ICON */
-
-.icon {
-
-width: 45px;
-
-height: 45px;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-background: #061a22;
-
-border: 1px solid
-    rgba(0, 234, 255, 0.4);
-
-font-size: 21px;
-
-flex-shrink: 0;
-
-
-}
-
-/* TEXT */
-
-.menu-text {
-
-flex: 1;
-
-display: flex;
-
-flex-direction: column;
-
-gap: 4px;
-
-
-}
-
-.menu-text span {
-
-color: #00ff88;
-
-font-size: 8px;
-
-letter-spacing: 2px;
-
-
-}
-
-.menu-text b {
-
-color: white;
-
-font-size: 13px;
-
-letter-spacing: 2px;
-
-
-}
-
-.menu-text small {
-
-color: #547985;
-
-font-size: 8px;
-
-letter-spacing: 1px;
-
-
-}
-
-/* ARROW */
-
-.arrow {
-
-color: #00eaff;
-
-font-size: 25px;
-
-transition: 0.3s;
-
-
-}
-
-.menu-button:hover .arrow {
-
-color: #00ff88;
-
-transform:
-    translateX(5px);
-
-
-}
-
-/* ===================================
-FOOTER
-=================================== */
-
-footer {
-
-text-align: center;
-
-margin-top: 25px;
-
-padding-top: 15px;
-
-border-top:
-    1px solid
-    rgba(0, 234, 255, 0.15);
-
-color: #466873;
-
-font-size: 8px;
-
-letter-spacing: 2px;
-
-
-}
-
-footer span {
-
-color: #00eaff;
-
-
-}
-
-/* ===================================
-CONTENT HALAMAN
-=================================== */
-
-.content {
-
-text-align: center;
-
-
-}
-
-.content h2 {
-
-color: #00eaff;
-
-font-size: 22px;
-
-letter-spacing: 2px;
-
-margin-bottom: 20px;
-
-text-shadow:
-    0 0 10px #00eaff;
-
-
-}
-
-.content > p {
-
-color: #9bbac2;
-
-font-size: 14px;
-
-line-height: 1.8;
-
-margin-bottom: 20px;
-
-
-}
-
-/* ===================================
-DATA
-=================================== */
-
-.data {
-
-text-align: left;
-
-background:
-    rgba(0, 234, 255, 0.04);
-
-border:
-    1px solid
-    rgba(0, 234, 255, 0.25);
-
-
-}
-
-.data p {
-
-padding: 15px;
-
-color: #a5c6ce;
-
-line-height: 1.6;
-
-border-bottom:
-    1px solid
-    rgba(0, 234, 255, 0.12);
-
-
-}
-
-.data p:last-child {
-
-border-bottom: none;
-
-
-}
-
-.data b {
-
-color: #00eaff;
-
-font-size: 10px;
-
-letter-spacing: 2px;
-
-
-}
-
-/* ===================================
-SOCIAL
-=================================== */
-
-.social {
-
-margin-bottom: 25px;
-
-
-}
-
-.social p {
-
-text-align: left;
-
-color: #00eaff;
-
-font-size: 10px;
-
-letter-spacing: 2px;
-
-margin: 15px 0 7px;
-
-
-}
-
-.social a {
-
-display: block;
-
-padding: 15px;
-
-color: white;
-
-text-decoration: none;
-
-background:
-    rgba(0, 234, 255, 0.05);
-
-border:
-    1px solid
-    rgba(0, 234, 255, 0.3);
-
-transition: 0.3s;
-
-
-}
-
-.social a:hover {
-
-color: #02070d;
-
-background: #00eaff;
-
-box-shadow:
-    0 0 20px #00eaff;
-
-
-}
-
-/* ===================================
-MUSIK
-=================================== */
-
-.song {
-
-text-align: left;
-
-margin-bottom: 25px;
-
-padding: 5px;
-
-background:
-    rgba(0, 234, 255, 0.04);
-
-border:
-    1px solid
-    rgba(0, 234, 255, 0.25);
-
-
-}
-
-.song p {
-
-padding: 15px;
-
-color: #a5c6ce;
-
-border-bottom:
-    1px solid
-    rgba(0, 234, 255, 0.12);
-
-transition: 0.3s;
-
-
-}
-
-.song p:last-child {
-
-border-bottom: none;
-
-
-}
-
-.song p:hover {
-
-color: #00eaff;
-
-padding-left: 22px;
-
-
-}
-
-/* ===================================
-MOTIVASI
-=================================== */
-
-.quote {
-
-text-align: left;
-
-padding: 20px;
-
-color: #d8faff !important;
-
-background:
-    rgba(0, 234, 255, 0.05);
-
-border-left:
-    4px solid #00eaff;
-
-font-style: italic;
-
-margin-bottom: 20px;
-
-
-}
-
-.motivation-list {
-
-text-align: left;
-
-margin-bottom: 25px;
-
-padding: 5px;
-
-background:
-    rgba(0, 234, 255, 0.04);
-
-border:
-    1px solid
-    rgba(0, 234, 255, 0.25);
-
-
-}
-
-.motivation-list p {
-
-padding: 14px;
-
-color: #a5c6ce;
-
-border-bottom:
-    1px solid
-    rgba(0, 234, 255, 0.12);
-
-
-}
-
-.motivation-list p:last-child {
-
-border-bottom: none;
-
-
-}
-
-/* ===================================
-KEMBALI
-=================================== */
-
-.back {
-
-display: inline-block;
-
-padding: 13px 20px;
-
-color: #00eaff;
-
-text-decoration: none;
-
-border:
-    1px solid #00eaff;
-
-font-size: 10px;
-
-letter-spacing: 1px;
-
-transition: 0.3s;
-
-
-}
-
-.back:hover {
-
-color: #02070d;
-
-background: #00eaff;
-
-box-shadow:
-    0 0 20px #00eaff;
-
-
-}
-
-/* ===================================
-ANIMATION
-=================================== */
-
-@keyframes scan {
-
-0% {
-
-    top: 0;
-
-    opacity: 0;
-}
-
-10% {
-
-    opacity: 1;
-}
-
-90% {
-
-    opacity: 1;
-}
-
-100% {
-
-    top: 100%;
-
-    opacity: 0;
-}
-
-
-}
-
-/* ===================================
-HP
-=================================== */
-
-@media (max-width: 550px) {
-
-body {
-
-    padding: 10px;
-
-    align-items: flex-start;
-
-    padding-top: 20px;
-}
-
-
-.container {
-
-    padding: 20px 15px;
-}
-
-
-.photo-box {
-
-    width: 125px;
-
-    height: 125px;
-}
-
-
-.profile h1 {
-
-    font-size: 28px;
-
-    letter-spacing: 5px;
-}
-
-
-.menu-button {
-
-    min-height: 70px;
-}
-}
-
-
-/* ================= CSS BUKU TAMU ================= */
-
-.guestbook-form {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 20px 0;
-    text-align: left;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 75px;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 234, 255, 0.12),
+            rgba(0, 234, 255, 0.02)
+        );
+    border: 1px solid rgba(0, 234, 255, 0.35);
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+/* GARIS GLOWING KIRI MENU */
+.menu-button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #00eaff;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* INTERAKSI HOVER MENU */
+.menu-button:hover {
+    transform: translateX(7px);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 234, 255, 0.25),
+            rgba(0, 234, 255, 0.05)
+        );
+    border-color: #00eaff;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.25);
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #061a22;
+    border: 1px solid rgba(0, 234, 255, 0.4);
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.menu-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-text span {
+    color: #00ff88;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.menu-text b {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.menu-text small {
+    color: #547985;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    color: #00eaff;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.menu-button:hover .arrow {
+    color: #00ff88;
+    transform: translateX(5px);
+}
+
+/* ===================================
+FOOTER GLOBlAL
+=================================== */
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 234, 255, 0.15);
+    color: #466873;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+footer span {
+    color: #00eaff;
+}
+
+/* ===================================
+GUESTBOOK / TRANSMISSION LOGS 
+=================================== */
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-align: left;
 }
 
 .input-group label {
-    font-size: 0.8rem;
-    color: #00f2fe;
+    font-size: 9px;
+    color: #00eaff;
+    letter-spacing: 2px;
     font-weight: bold;
 }
 
-.input-group input,
+.input-group input, 
 .input-group textarea {
-    width: 100%;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 242, 254, 0.4);
-    border-radius: 6px;
-    padding: 8px 10px;
-    color: #ffffff;
+    background: rgba(2, 10, 16, 0.8);
+    border: 1px solid rgba(0, 234, 255, 0.4);
+    border-radius: 5px;
+    padding: 12px;
+    color: #fff;
     font-family: inherit;
+    font-size: 13px;
     outline: none;
+    transition: 0.3s;
 }
 
-.input-group input:focus,
+/* FORM FIELD FOCUS */
+.input-group input:focus, 
 .input-group textarea:focus {
-    border-color: #00f2fe;
-    box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+    border-color: #00ff88;
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+    background: rgba(2, 10, 16, 0.9);
 }
 
-.submit-btn {
+/* SUBMIT BUTTON */
+.btn-submit {
     background: transparent;
-    border: 1px solid #00f2fe;
-    color: #00f2fe;
-    padding: 10px;
-    border-radius: 6px;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    padding: 14px;
+    border-radius: 5px;
     font-weight: bold;
+    font-size: 11px;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
 }
 
-.submit-btn:hover {
-    background: #00f2fe;
-    color: #000;
-    box-shadow: 0 0 10px #00f2fe;
+.btn-submit:hover {
+    background: #00ff88;
+    color: #02070d;
+    box-shadow: 0 0 20px #00ff88;
+    text-shadow: none;
 }
 
-.message-list-container {
+/* LOGS / TRANSMISSION DISPLAY */
+.logs-title {
     text-align: left;
-    margin-top: 20px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.2);
-    padding-top: 15px;
+    font-size: 10px;
+    color: #00eaff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-bottom: 1px dashed rgba(0, 234, 255, 0.3);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
 }
 
-.message-card {
-    background: rgba(255, 255, 255, 0.04);
-    border-left: 3px solid #00f2fe;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
+.guestbook-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 380px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 5px;
 }
 
-.message-header {
+/* LOG CARD BUBBLE */
+.log-card {
+    background: rgba(7, 23, 32, 0.6);
+    border-left: 3px solid #00eaff;
+    border-right: 1px solid rgba(0, 234, 255, 0.1);
+    border-top: 1px solid rgba(0, 234, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 234, 255, 0.1);
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.log-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 0.85rem;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.log-user {
+    color: #00ff88;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.log-time {
+    color: #547985;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.log-msg {
+    color: #a5c6ce;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* BACK TO MENU LINK */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #547985;
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: left;
+    width: 100%;
+}
+
+.back-btn:hover {
+    color: #00eaff;
+    text-shadow: 0 0 8px #00eaff;
+}
+
+/* CUSTOM SCROLLBAR FOR LOGS */
+.guestbook-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.guestbook-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.guestbook-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 234, 255, 0.3);
+    border-radius: 10px;
+}
+
+.guestbook-list::-webkit-scrollbar-thumb:hover {
+    background: #00eaff;
 }
